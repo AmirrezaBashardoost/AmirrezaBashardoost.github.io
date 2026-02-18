@@ -1,3 +1,8 @@
+
+function navigateToProject(projectId){
+  window.location.href = `projects/project.html?id=${encodeURIComponent(projectId)}`;
+}
+
 // Uses window.PROJECTS from assets/projects-data.js
 const PROJECTS = window.PROJECTS || [];
 
@@ -8,9 +13,19 @@ const themeToggle = document.getElementById("themeToggle");
 yearEl.textContent = new Date().getFullYear();
 
 // Theme (dark/light)
+
+function updateThemeLabel(){
+  const label = document.getElementById("themeLabel");
+  if (!label) return;
+  const current = document.documentElement.getAttribute("data-theme");
+  // When current is 'light' we offer switching back to Dark
+  label.textContent = current === "light" ? "Dark" : "Light";
+}
+
 (function initTheme(){
   const saved = localStorage.getItem("theme");
   if (saved) document.documentElement.setAttribute("data-theme", saved);
+  updateThemeLabel();
 
   themeToggle.addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme");
@@ -18,6 +33,7 @@ yearEl.textContent = new Date().getFullYear();
     if (next) document.documentElement.setAttribute("data-theme", next);
     else document.documentElement.removeAttribute("data-theme");
     localStorage.setItem("theme", next || "");
+    updateThemeLabel();
   });
 })();
 
@@ -49,6 +65,13 @@ function projectCard(p){
       <a class="btn btn-secondary" href="projects/project.html?id=${encodeURIComponent(p.id)}">Open project page</a>
     </div>
   `;
+
+  el.addEventListener("click", (e) => {
+    // Don't hijack clicks on interactive elements
+    if (e.target && (e.target.closest("a") || e.target.closest("button"))) return;
+    navigateToProject(p.id);
+  });
+
   return el;
 }
 

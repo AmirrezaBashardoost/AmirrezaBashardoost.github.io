@@ -9,6 +9,7 @@ yearEl.textContent = new Date().getFullYear();
 (function initTheme(){
   const saved = localStorage.getItem("theme");
   if (saved) document.documentElement.setAttribute("data-theme", saved);
+  updateThemeLabel();
 
   themeToggle.addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme");
@@ -16,6 +17,7 @@ yearEl.textContent = new Date().getFullYear();
     if (next) document.documentElement.setAttribute("data-theme", next);
     else document.documentElement.removeAttribute("data-theme");
     localStorage.setItem("theme", next || "");
+    updateThemeLabel();
   });
 })();
 
@@ -74,6 +76,29 @@ const beforeArr = safeArr(p?.beforeImages);
 const afterArr  = safeArr(p?.afterImages);
 const finalArr  = safeArr(p?.finalImages);
 
+
+const coverImg = document.getElementById("coverImg");
+const coverCap = document.getElementById("coverCap");
+
+function setCover(){
+  if (!coverImg) return;
+  const src =
+    (finalArr[0] && finalArr[0].src) ||
+    (afterArr[0] && afterArr[0].src) ||
+    (beforeArr[0] && beforeArr[0].src) ||
+    "../assets/img/hero.jpg";
+  coverImg.src = src;
+  coverImg.alt = p ? `${p.title} cover image` : "Project cover image";
+  if (coverCap){
+    const cap =
+      (finalArr[0] && finalArr[0].caption) ||
+      (afterArr[0] && afterArr[0].caption) ||
+      (beforeArr[0] && beforeArr[0].caption) || "";
+    coverCap.textContent = cap;
+  }
+}
+
+
 function setImg(el, capEl, arr, i, alt){
   if (!arr.length){
     el.src = "../assets/img/hero.jpg";
@@ -124,6 +149,7 @@ function renderVideo(){
 }
 
 function renderAll(){
+  setCover();
   setImg(beforeImg, beforeCap, beforeArr, bi, "Before image");
   setImg(afterImg, afterCap, afterArr, ai, "After image");
   setImg(finalImg, finalCap, finalArr, fi, "Final image");
