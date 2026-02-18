@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project — Your Name</title>
+  <meta name="description" content="Project page with before/after images, final gallery, video, and description." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html#projects" aria-label="Back to projects">
+        <span class="brand-mark">←</span>
+        <span class="brand-text">Back</span>
+      </a>
+
+      <nav class="nav" aria-label="Project navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary" href="../assets/cv/YourName_CV.pdf" target="_blank" rel="noopener">
+          Download CV (PDF)
+        </a>
+        <button class="btn btn-ghost" id="themeToggle" type="button" aria-label="Toggle theme">
+          Theme
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="pTitle">Project Title</h2>
+            <p class="muted" id="pMeta">Year • Role • Tools</p>
+          </div>
+          <div class="hero-cta">
+            <a class="btn btn-secondary" id="prevProject" href="#">Prev</a>
+            <a class="btn btn-secondary" id="nextProject" href="#">Next</a>
+          </div>
+        </div>
+
+        <p class="lead" id="pDesc"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Before & After</h2>
+          <p class="muted">Show the transformation clearly: existing vs proposed.</p>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <h3>Before</h3>
+            <div class="gallery-single">
+              <button class="gallery-nav" id="prevBefore" type="button" aria-label="Previous before image">‹</button>
+              <img id="beforeImg" alt="Before image" />
+              <button class="gallery-nav" id="nextBefore" type="button" aria-label="Next before image">›</button>
+            </div>
+            <p class="caption muted" id="beforeCap"></p>
+          </div>
+
+          <div class="card">
+            <h3>After</h3>
+            <div class="gallery-single">
+              <button class="gallery-nav" id="prevAfter" type="button" aria-label="Previous after image">‹</button>
+              <img id="afterImg" alt="After image" />
+              <button class="gallery-nav" id="nextAfter" type="button" aria-label="Next after image">›</button>
+            </div>
+            <p class="caption muted" id="afterCap"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Final Gallery</h2>
+          <p class="muted">Key final images (renders / boards / drawings).</p>
+        </div>
+
+        <div class="card">
+          <div class="gallery">
+            <button class="gallery-nav" id="prevFinal" type="button" aria-label="Previous final image">‹</button>
+            <img id="finalImg" alt="Final image" />
+            <button class="gallery-nav" id="nextFinal" type="button" aria-label="Next final image">›</button>
+          </div>
+          <p class="caption muted" id="finalCap"></p>
+        </div>
+
+        <div class="video-wrap" id="videoWrap"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <footer class="footer">
+          <p class="muted">© <span id="year"></span> Your Name. Built with GitHub Pages.</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/projects-data.js"></script>
+  <script src="../assets/project-page.js"></script>
+</body>
+</html>
