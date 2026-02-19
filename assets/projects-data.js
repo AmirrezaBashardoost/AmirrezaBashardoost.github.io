@@ -1,6 +1,12 @@
 // ========================================
 // PROJECT DATA (EDIT THIS FILE)
 // ========================================
+function seqImages(dir, count, label, ext = "jpg") {
+  return Array.from({ length: count }, (_, i) => ({
+    src: `${dir}/${i + 1}.${ext}`,
+    caption: `${label} — ${i + 1}`
+  }));
+}
 window.PROJECTS = [
   {
     id: "p1",
