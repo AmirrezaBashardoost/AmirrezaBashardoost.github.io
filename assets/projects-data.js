@@ -7,6 +7,12 @@ function seqImages(dir, count, label, ext = "jpg") {
     caption: `${label} — ${i + 1}`
   }));
 }
+function seqVideos(dir, count, label, ext = "mp4") {
+  return Array.from({ length: count }, (_, i) => ({
+    src: `${dir}/${i + 1}.${ext}`,
+    caption: `${label} video — ${i + 1}`
+  }));
+}
 window.PROJECTS = [
   {
     id: "p1",
@@ -95,7 +101,36 @@ window.PROJECTS = [
 
   // ONE MP4 video
   videoEmbed: "",
-  videoFile: "../assets/projects/p4/video/walkthrough.mp4"
+  videoFile: "../assets/projects/p4/after/5.mp4"
 },
+{
+  id: "p5",
+  title: "Residential Renovation – Velenjak",
+  category: "residential",
+  year: "2025",
+  role: "Execution + Site Supervision + Coordination",
+  tools: "On-site Execution, Drywall (Gypsum Board), Tiling, Plumbing, Windows, Cabinetry",
+  short: "Complete renovation of a 140 sqm residential unit focused on spatial modernization and functional optimization.",
+  description:
+    "Complete renovation of a residential unit with a focus on spatial modernization and functional optimization. The scope included full ceiling demolition and installation of a new gypsum board (drywall) ceiling, spatial reconfiguration through partition construction and addition of one room, floor and bathroom tiling, installation of wall-hung sanitary systems and concealed plumbing fixtures, replacement of PVC windows, full kitchen cabinet replacement, and complete interior repainting. The project emphasized spatial coherence, improved functionality, and precise execution of modern construction details.",
+
+  // 7 BEFORE images
+  beforeImages: seqImages("../assets/projects/p5/before/images", 7, "Before", "jpg"),
+
+  // 1 BEFORE video
+  beforeVideos: seqVideos("../assets/projects/p5/before/videos", 1, "Before", "mp4"),
+
+  // 4 AFTER images
+  afterImages: seqImages("../assets/projects/p5/after/images", 4, "After", "jpg"),
+
+  // 4 AFTER videos
+  afterVideos: seqVideos("../assets/projects/p5/after/videos", 4, "After", "mp4"),
+
+  // Keep final empty for this project (optional)
+  finalImages: [],
+  videoEmbed: "",
+  videoFile: ""
+},
+
 
 ];
