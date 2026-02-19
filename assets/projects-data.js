@@ -4,25 +4,21 @@
 window.PROJECTS = [
   {
     id: "p1",
-    title: "Courtyard House",
-    category: "residential",
-    year: "2025",
-    role: "Concept + Modeling + Rendering",
-    tools: "Revit, Lumion, Photoshop",
-    short: "A compact courtyard home designed to maximize daylight and privacy using layered thresholds.",
+    title: "Interior Execution – Tehransar",
+    category: "interior",
+    year: "2023–2024",
+    role: "Site Execution + Coordination",
+    tools: "On-site Execution",
+    short: "Interior execution focused on precise detailing, large-format slab installation, and coordinated MEP integration.",
     description:
-      "This project explores a courtyard strategy for natural light, ventilation, and privacy. The massing is shaped by sun angles and sightlines, with a simple circulation loop that frames key views. Material choices prioritize calm, durable finishes and a warm interior atmosphere.",
+      "Execution of suspended slab steel substructure, installation of large-format slabs, electrical wiring, and installation of suspended cabinetry. The project required close coordination between structural and architectural detailing to achieve precise execution.",
     beforeImages: [
-      { src: "../assets/img/p1-before-1.jpg", caption: "Before — existing condition (placeholder)" },
-      { src: "../assets/img/p1-before-2.jpg", caption: "Before — existing plan (placeholder)" }
+      { src: "../assets/img/p1-before-1.jpg", caption: "Before — existing condition" }
     ],
     afterImages: [
-      { src: "../assets/img/p1-after-1.jpg", caption: "After — proposed exterior (placeholder)" },
-      { src: "../assets/img/p1-after-2.jpg", caption: "After — proposed plan (placeholder)" }
+      { src: "../assets/img/p1-after-1.jpg", caption: "After — executed interior result" }
     ],
-    finalImages: [
-      { src: "../assets/img/p1-final-1.jpg", caption: "Final — hero render (placeholder)" }
-    ],
+    finalImages: [],
     videoEmbed: "",
     videoFile: ""
   },
