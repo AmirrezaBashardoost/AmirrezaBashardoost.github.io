@@ -132,11 +132,22 @@ function setImg(el, capEl, arr, i, alt){
 }
 
 function renderVideo(){
+  // Hide entire final section if there is no MP4 video file
+  const finalSection = document.getElementById("finalSection");
+  const finalGalleryCard = document.getElementById("finalGalleryCard");
+
+  if (finalGalleryCard) finalGalleryCard.style.display = "none"; // always video-only
+
+  // Clear old video
   videoWrap.innerHTML = "";
-  if (!p) return;
-  const hasEmbed = !!p.videoEmbed;
-  const hasFile  = !!p.videoFile;
-  if (!hasEmbed && !hasFile) return;
+
+  if (!p || !p.videoFile){
+    if (finalSection) finalSection.style.display = "none";
+    return;
+  }
+
+  // If video exists, show the section
+  if (finalSection) finalSection.style.display = "";
 
   const title = document.createElement("p");
   title.className = "muted";
@@ -147,31 +158,21 @@ function renderVideo(){
   const frame = document.createElement("div");
   frame.className = "video";
 
-  if (hasEmbed){
-    frame.innerHTML = `
-      <iframe
-        src="${p.videoEmbed}"
-        title="${escapeHtml(p.title)} video"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="lazy"></iframe>
-    `;
-  } else {
-    frame.innerHTML = `
-      <video controls preload="metadata">
-        <source src="${p.videoFile}" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    `;
-  }
+  frame.innerHTML = `
+    <video controls preload="metadata">
+      <source src="${p.videoFile}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  `;
+
   videoWrap.appendChild(frame);
 }
+
 
 function renderAll(){
   setCover();
   setImg(beforeImg, beforeCap, beforeArr, bi, "Before image");
   setImg(afterImg, afterCap, afterArr, ai, "After image");
-  setImg(finalImg, finalCap, finalArr, fi, "Final image");
   renderVideo();
 }
 

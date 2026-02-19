@@ -89,13 +89,15 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="finalSection">
       <div class="container">
         <div class="section-head">
-          <h2>Final Gallery</h2>
+          <h2 id="finalSectionTitle">Final Video</h2>
+          <p class="muted" id="finalSectionSubtitle">Walkthrough video (MP4).</p>
         </div>
 
-        <div class="card">
+        <!-- We will hide this gallery card always (video-only) -->
+        <div class="card" id="finalGalleryCard" style="display:none;">
           <div class="gallery">
             <button class="gallery-nav" id="prevFinal" type="button" aria-label="Previous final image">‹</button>
             <img id="finalImg" alt="Final image" />
@@ -107,6 +109,7 @@
         <div class="video-wrap" id="videoWrap"></div>
       </div>
     </section>
+
 
     <section class="section" id="contact">
       <div class="container">
