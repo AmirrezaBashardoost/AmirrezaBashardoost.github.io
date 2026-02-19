@@ -24,26 +24,27 @@ window.PROJECTS = [
   },
   {
     id: "p2",
-    title: "Retail Pavilion",
-    category: "commercial",
+    title: "Luxury Villa Renovation – Shahrak-e Gharb",
+    category: "residential",
     year: "2024",
-    role: "Design Development + Visualization",
-    tools: "Rhino, V-Ray, Illustrator",
-    short: "A modular retail pavilion with a lightweight structure and flexible interior layout.",
+    role: "Execution + Site Supervision + Coordination",
+    tools: "On-site Execution, Coordination, Detailing",
+    short: "Complete renovation and modernization of a 570 sqm villa on a 1,000 sqm land, transforming both interior and exterior.",
     description:
-      "Designed as a modular system that adapts to different sites, this pavilion uses repeating structural bays and a clear facade rhythm. The interior planning supports reconfiguration for changing retail needs, while keeping circulation intuitive.",
+      "Complete renovation and modernization of a large-scale residential villa, including full interior and exterior transformation. The scope included floor and bathroom tiling, installation of wall-hung sanitary systems with concealed fixtures, implementation of a smart home system, façade column redesign using gypsum board cladding to achieve modern rectangular forms, exterior pool tiling, CNC redesign of railings and entrance gate, façade repainting, and full modernization of interior and exterior spaces.",
     beforeImages: [
-      { src: "../assets/img/p2-before-1.jpg", caption: "Before — site photo (placeholder)" }
+      { src: "../assets/img/p2-before-1.jpg", caption: "Before — existing condition" }
     ],
     afterImages: [
-      { src: "../assets/img/p2-after-1.jpg", caption: "After — proposed facade (placeholder)" }
+      { src: "../assets/img/p2-after-1.jpg", caption: "After — renovated villa" }
     ],
     finalImages: [
-      { src: "../assets/img/p2-final-1.jpg", caption: "Final — interior view (placeholder)" }
+      { src: "../assets/img/p2-final-1.jpg", caption: "Final — key result" }
     ],
     videoEmbed: "",
-    videoFile: ""
+    videoFile: "../assets/videos/p2-walkthrough.mp4"
   },
+
   {
     id: "p3",
     title: "Minimal Interior Renovation",
