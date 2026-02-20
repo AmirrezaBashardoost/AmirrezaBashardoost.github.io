@@ -73,26 +73,29 @@ window.PROJECTS = [
 
 
 
-  {
-    id: "p4",
-    title: "Museum Concept",
-    category: "concept",
-    year: "2025",
-    role: "Concept + Diagrams",
-    tools: "Rhino, Illustrator",
-    short: "A museum concept shaped by a promenade sequence and controlled natural light.",
-    description:
-      "This concept is driven by a promenade route that stages exhibits as a sequence of compressions and releases. Skylight strategies deliver diffuse light while protecting sensitive exhibits, supported by a simple structural logic.",
-    beforeImages: [
-      { src: "../assets/img/p4-before-1.jpg", caption: "Before — context study (placeholder)" }
-    ],
-    afterImages: [
-      { src: "../assets/img/p4-after-1.jpg", caption: "After — massing proposal (placeholder)" }
-    ],
-    finalImages: [
-      { src: "../assets/img/p4-final-1.jpg", caption: "Final — section concept (placeholder)" }
-    ],
-    videoEmbed: "",
-    videoFile: ""
-  }
+{
+  id: "p4",
+  title: "Residential Renovation – Mirdamad",
+  category: "residential",
+  year: "2024–2025",
+  role: "Execution + Site Supervision + Coordination",
+  tools: "On-site Execution, Detailing, Coordination",
+  short: "130 sqm interior refurbishment focused on key living spaces with improved material quality and detailing.",
+  description:
+    "Interior refurbishment with emphasis on key living spaces. The scope included bedroom flooring replacement with parquet, bathroom retiling, installation of wall-hung sanitary systems and concealed fixtures, kitchen cabinetry execution, gypsum board ceiling installation, and complete repainting. The renovation was executed with minimal structural intervention while enhancing material quality and detailing.",
+
+  // 2 BEFORE images
+  beforeImages: seqImages("../assets/projects/p4/before", 2, "Before", "jpg"),
+
+  // 2 AFTER images
+  afterImages: seqImages("../assets/projects/p4/after", 2, "After", "jpg"),
+
+  // keep empty (optional) — since you mainly have video
+  finalImages: [],
+
+  // ONE MP4 video
+  videoEmbed: "",
+  videoFile: "../assets/projects/p4/video/walkthrough.mp4"
+},
+
 ];
