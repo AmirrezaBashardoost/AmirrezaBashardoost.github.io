@@ -95,7 +95,7 @@ window.PROJECTS = [
 
   // ONE MP4 video
   videoEmbed: "",
-  videoFile: "../assets/projects/p4/video/walkthrough.mp4"
+  videoFile: "../assets/projects/p4/after/5.mp4"
 },
 
 ];
